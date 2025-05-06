@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Pest Control - The Pestology</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <!-- <script src="js/main.js" defer></script>
+    <script src="js/form-validation.js" defer></script> -->
+    <script src="js/genral_past.js" defer></script>
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: #4CAF50;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #4CAF50;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 2px 0;
+            transition: all 0.3s;
+        }
+
+        /* Service Hero */
+        .service-hero {
+            background-color: #f5f5f5;
+            padding: 80px 0;
+            text-align: center;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        
+        .service-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .service-hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Service Details */
+        .service-details {
+            padding: 80px 0;
+        }
+        
+        .service-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .service-intro h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .service-intro p {
+            font-size: 16px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Service Types */
+        .service-types {
+            margin-bottom: 60px;
+        }
+        
+        .service-type {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 50px;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-type:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .service-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .service-content {
+            flex: 1;
+            padding: 40px;
+            min-width: 300px;
+        }
+        
+        .service-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .service-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .service-features li:before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Do's and Don'ts */
+        .dos-donts {
+            margin-bottom: 60px;
+        }
+        
+        .dos-donts h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .dos-donts-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .dos, .donts {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .dos {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4CAF50;
+        }
+        
+        .donts {
+            background-color: #ffebee;
+            border-left: 5px solid #f44336;
+        }
+        
+        .dos h3, .donts h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .dos h3 i {
+            color: #4CAF50;
+            margin-right: 10px;
+        }
+        
+        .donts h3 i {
+            color: #f44336;
+            margin-right: 10px;
+        }
+        
+        .dos ul, .donts ul {
+            list-style: none;
+        }
+        
+        .dos li, .donts li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .dos li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+        
+        .donts li:before {
+            content: "\f00d";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #f44336;
+            position: absolute;
+            left: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 60px 0;
+            border-radius: 8px;
+        }
+        
+        .cta-section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 16px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-info {
+            flex: 2;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo span {
+            color: #4CAF50;
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #4CAF50;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #4CAF50;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #4CAF50;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #4CAF50;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+                /* icons */
+                .icon-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.icon-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #02492f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.popup-icon {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.popup-icon.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+        /* Media Queries for Responsive Design */
+        @media (max-width: 992px) {
+            .service-type {
+                flex-direction: column !important;
+            }
+            
+            .service-image {
+                width: 100%;
+                height: 300px;
+            }
+            
+            .dos-donts-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                display: none;
+            }
+            
+            .nav.active {
+                display: block;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+            }
+            
+            .nav-item {
+                margin: 0;
+                margin-bottom: 15px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .service-content {
+                padding: 30px;
+            }
+            
+            .service-hero h1 {
+                font-size: 32px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .service-hero {
+                padding: 60px 0;
+            }
+            
+            .service-hero h1 {
+                font-size: 28px;
+            }
+            
+            .service-intro h2 {
+                font-size: 26px;
+            }
+            
+            .dos, .donts {
+                padding: 20px;
+            }
+        
+            
+        }
+    </style>
+</head>
+<body>
+    <select id="language" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="hi">हिंदी</option>
+      </select>
+<div class="icon-container">
+
+        <div class="icon-button popup-icon" id="msg-icon"><i class="fa-solid fa-message"></i></div>
+        <div class="icon-button popup-icon" id="phone-icon"><i class="fa-solid fa-phone"></i></div>
+        
+        
+        <div class="icon-button" id="main-icon"><i class="fa-solid fa-comment-dots"></i></div>
+      </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>The<span>Pestology</span></h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="home">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link" data-i18n="about">About</a></li>
+                        <li class="nav-item"><a href="services.html" class="nav-link" data-i18n="services">Services</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link" data-i18n="contacth">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <h1 data-i18n="General_Pesth">General Pest Control</h1>
+            <p data-i18n="General_Pesthp">Effective solutions for common household pests that threaten your home and family's well-being.</p>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-details">
+        <div class="container">
+            <div class="service-intro">
+                <h2 data-i18n="service_detailsh">Comprehensive Pest Management Solutions</h2>
+                <p data-i18n="service_detailshp">Our general pest control services are designed to eliminate and prevent infestations of common household pests. We use safe, effective, and environmentally friendly methods to protect your home and family from unwanted intruders.</p>
+            </div>
+
+            <!-- Service Types -->
+            <div class="service-types">
+                <!-- Cockroach Control -->
+                <div class="service-type">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Cockroach Control">
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="Cockroachh">Cockroach Control</h3>
+                        <p data-i18n="Cockroachp">Cockroaches can spread disease, trigger allergies, and contaminate food. Our comprehensive cockroach control service eliminates these pests and prevents their return.</p>
+                        <ul class="service-features">
+                            <li data-i18n="Cockroachli1">Thorough inspection to identify cockroach species and hiding places</li>
+                            <li data-i18n="Cockroachli2">Targeted treatment of infested areas</li>
+                            <li data-i18n="Cockroachli3">Use of gel baits, insect growth regulators, and barrier treatments</li>
+                            <li data-i18n="Cockroachli4">Preventative recommendations to avoid future infestations</li>
+                            <li data-i18n="Cockroachli5">Follow-up treatments if necessary</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mosquito Control -->
+                <div class="service-type">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Mosquito Control">
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="Mosquitohh">Mosquito Control</h3>
+                        <p data-i18n="Mosquitohp">Mosquitoes are not just annoying; they can transmit dangerous diseases. Our mosquito control service helps protect your family from these blood-sucking pests.</p>
+                        <ul class="service-features">
+                            <li data-i18n="Mosquitohl1">Identification of breeding sites and harborage areas</li>
+                            <li data-i18n="Mosquitohl2">Treatment of vegetation where adult mosquitoes rest</li>
+                            <li data-i18n="Mosquitohl3">Application of larvicides to standing water</li>
+                            <li data-i18n="Mosquitohl4">Residual barrier treatments around your property</li>
+                            <li data-i18n="Mosquitohl5">Guidance on reducing mosquito breeding sites</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Housefly Management -->
+                <div class="service-type">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Housefly Management">
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="Houseflyh">Housefly Management</h3>
+                        <p data-i18n="Houseflyp">Flies can spread pathogens and contaminate food and surfaces. Our fly control program helps eliminate these disease vectors from your home or business.</p>
+                        <ul class="service-features">
+                            <li data-i18n="Houseflyl1">Identification of fly species and breeding sources</li>
+                            <li data-i18n="Houseflyl2">Removal of breeding materials when possible</li>
+                            <li data-i18n="Houseflyl3">Installation of fly traps and bait stations</li>
+                            <li data-i18n="Houseflyl4">Application of residual insecticides in appropriate areas</li>
+                            <li data-i18n="Houseflyl5">Recommendations for sanitation and exclusion measures</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bed Bug Elimination -->
+                <div class="service-type">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Bed Bug Elimination">
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="Bed_Bugh">Bed Bug Elimination</h3>
+                        <p data-i18n="Bed_Bugp">Bed bugs cause sleepless nights and uncomfortable bites. Our bed bug elimination service thoroughly removes these persistent pests from your home.</p>
+                        <ul class="service-features">
+                            <li data-i18n="Bed_Bugl1">Detailed inspection using specialized tools to locate all bed bugs</li>
+                            <li data-i18n="Bed_Bugl2">Treatment of infested furniture, bedding, and cracks and crevices</li>
+                            <li data-i18n="Bed_Bugl3">Heat treatments when appropriate</li>
+                            <li data-i18n="Bed_Bugl4">Follow-up inspections to ensure complete elimination</li>
+                            <li data-i18n="Bed_Bugl5">Prevention recommendations to avoid re-infestation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Rat & Rodent Control -->
+                <div class="service-type">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Rat & Rodent Control">
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="Rat_Rodenth">Rat & Rodent Control</h3>
+                        <p data-i18n="Rat_Rodentp">Rodents damage property, contaminate food, and can spread diseases. Our rodent control program effectively eliminates rats, mice, and other rodents from your property.</p>
+                        <ul class="service-features">
+                            <li data-i18n="Rat_Rodentl1">Comprehensive inspection to identify entry points and nesting areas</li>
+                            <li data-i18n="Rat_Rodentl2">Placement of traps and bait stations in strategic locations</li>
+                            <li data-i18n="Rat_Rodentl3">Sealing of entry points to prevent future access</li>
+                            <li data-i18n="Rat_Rodentl4">Removal of rodents and nesting materials</li>
+                            <li data-i18n="Rat_Rodentl5">Advice on preventing future rodent problems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Do's and Don'ts Section -->
+            <div class="dos-donts">
+                <h2 data-i18n="gen_dosh">General Pest Control: Do's and Don'ts</h2>
+                <div class="dos-donts-container">
+                    <div class="dos">
+                        <h3 data-i18n="gen_dosh3"><i class="fas fa-check-circle" ></i> Do's</h3>
+                        <ul>
+                            <li data-i18n="gen_dosl1">Keep your home clean and free of food debris</li>
+                            <li data-i18n="gen_dosl2">Store food in sealed containers</li>
+                            <li data-i18n="gen_dosl3">Regularly empty trash and keep bins clean</li>
+                            <li data-i18n="gen_dosl4">Fix leaky pipes and eliminate standing water</li>
+                            <li data-i18n="gen_dosl5">Seal cracks and gaps in walls, floors, and foundations</li>
+                            <li data-i18n="gen_dosl6">Keep vegetation trimmed away from your home</li>
+                            <li data-i18n="gen_dosl7">Regularly inspect your home for signs of pest activity</li>
+                            <li data-i18n="gen_dosl8">Schedule regular professional pest control treatments</li>
+                            <li data-i18n="gen_dosl9">Vacuum regularly, especially in hard-to-reach areas</li>
+                            <li data-i18n="gen_dosl10">Follow all post-treatment instructions from your pest control provider</li>
+                        </ul>
+                    </div>
+                    <div class="donts">
+                        <h3 data-i18n="gen_dontsh3"><i class="fas fa-times-circle" ></i> Don'ts</h3>
+                        <ul>
+                            <li data-i18n="gen_dontl1">Don't leave dirty dishes in the sink overnight</li>
+                            <li data-i18n="gen_dontl2">Don't allow clutter to accumulate, as it provides hiding places for pests</li>
+                            <li data-i18n="gen_dontl3">Don't leave pet food out overnight</li>
+                            <li data-i18n="gen_dontl4">Don't ignore small pest problems, as they can quickly grow</li>
+                            <li data-i18n="gen_dontl5">Don't use DIY pest control products without proper knowledge</li>
+                            <li data-i18n="gen_dontl6">Don't mix different pest control products</li>
+                            <li data-i18n="gen_dontl7">Don't enter treated areas before it's safe to do so</li>
+                            <li data-i18n="gen_dontl8">Don't wash treated surfaces immediately after application</li>
+                            <li data-i18n="gen_dontl9">Don't allow children or pets near pest control products</li>
+                            <li data-i18n="gen_dontl10">Don't forget to address the underlying causes of pest problems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h3 data-i18n="ctah">Ready to Get Rid of Pests?</h3>
+                <p data-i18n="ctap">Contact us today for a free inspection and customized treatment plan tailored to your specific pest control needs.</p>
+                <a href="contact.html" class="btn" data-i18n="Quote">Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <h2>The<span>Pestology</span></h2>
+                    </div>
+                    <p>Professional facility solutions for residential and commercial properties.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Neelbad, Bhopal, Madhya Pradesh - 462044</p>
+                        <p><i class="fas fa-phone"></i> (+91) 88272 22101</p>
+                        <p><i class="fas fa-envelope"></i> thepestology@gmail.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 The Pestology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav').classList.toggle('active');
+        });
+
+        document.getElementById('main-icon').addEventListener('click', function() {
+    document.getElementById('msg-icon').classList.toggle('show');
+    document.getElementById('phone-icon').classList.toggle('show');
+});
+    </script>
+</body>
+</html>
