@@ -1,6 +1,31 @@
 translations ={
     en:{
-
+      home: "Home",
+      about: "About",
+      services: "Services",
+      contact: "Contact",
+      our_services:"Our Services",
+      our_servicespro:"Professional pest control solutions for residential and commercial properties",
+      our_servicespp:"We offer a wide range of pest control services tailored to meet your specific needs. Our team of experts uses safe, effective, and environmentally friendly methods to eliminate and prevent pest infestations.",
+    our_servicesp:"Comprehensive Pest Management Solutions",
+    General_Pest:"General Pest Control",
+    Generalpservl1:"Cockroach Control",
+    Generalpservl2:"Mosquito Control",
+    Generalpservl3:"Housefly Management",
+    Generalpservl4:"Bed Bug Elimination",
+    Generalpservl5:"Rat & Rodent Control",
+    Learn:"Learn More",
+    Termite_Control:"Termite Control",
+    Termite_Controlp:"Our comprehensive termite control services help protect your property from destructive termite infestations.",
+    Termitel1:"Pre-Construction Treatment",
+    Termitel1:"Pre-Construction Treatment",
+    Termitel2:"Post-Construction Treatment",
+    Termitel3:"Termite Inspection",
+    Termitel4:"Termite Baiting Systems",
+    Termitel5:"Preventative Measures",
+    cta_sectionh:"Need Professional Pest Control Services?",
+    cta_sectionp:"Contact us today for a free inspection and customized treatment plan tailored to your specific pest control needs.",
+    Quote:"Get a Free Quote"
     },
 
     hi:{

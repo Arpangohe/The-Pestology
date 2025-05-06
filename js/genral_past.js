@@ -1,7 +1,83 @@
 
 translations = {
     en:{
-      
+      home: "Home",
+      about: "About",
+      services: "Services",
+      contacth: "Contact",
+      General_Pesth:"General Pest Control",
+      General_Pesthp:"Effective solutions for common household pests that threaten your home and family's well-being.",
+      service_detailsh:"Comprehensive Pest Management Solutions",
+      service_detailshp:"Our general pest control services are designed to eliminate and prevent infestations of common household pests. We use safe, effective, and environmentally friendly methods to protect your home and family from unwanted intruders.",
+    //   Cockroach
+      Cockroachh:"Cockroach Control",
+      Cockroachp:"Cockroaches can spread disease, trigger allergies, and contaminate food. Our comprehensive cockroach control service eliminates these pests and prevents their return.",
+      Cockroachli1:"Thorough inspection to identify cockroach species and hiding places",
+      Cockroachli2:"Targeted treatment of infested areas",
+      Cockroachli3:"Use of gel baits, insect growth regulators, and barrier treatments",
+      Cockroachli4:"Preventative recommendations to avoid future infestations",
+      Cockroachli5:"Follow-up treatments if necessary",
+    //   Mosquito 
+    Mosquitohh:"Mosquito Control",
+    Mosquitohp:"Mosquitoes are not just annoying; they can transmit dangerous diseases. Our mosquito control service helps protect your family from these blood-sucking pests.",
+    Mosquitohl1:"Identification of breeding sites and harborage areas",
+    Mosquitohl2:"Treatment of vegetation where adult mosquitoes rest",
+    Mosquitohl3:"Application of larvicides to standing water",
+    Mosquitohl4:"Residual barrier treatments around your property",
+    Mosquitohl5:"Guidance on reducing mosquito breeding sites",
+    // Housefly
+    Houseflyh:"Housefly Management",
+    Houseflyp:"Flies can spread pathogens and contaminate food and surfaces. Our fly control program helps eliminate these disease vectors from your home or business.",
+    Houseflyl1:"Identification of fly species and breeding sources",
+    Houseflyl2:"Removal of breeding materials when possible",
+    Houseflyl3:"Installation of fly traps and bait stations",
+    Houseflyl4:"Application of residual insecticides in appropriate areas",
+    Houseflyl5:"Recommendations for sanitation and exclusion measures",
+    // Bed Bug
+    Bed_Bugh:"Bed Bug Elimination",
+    Bed_Bugp:"Bed bugs cause sleepless nights and uncomfortable bites. Our bed bug elimination service thoroughly removes these persistent pests from your home.",
+    Bed_Bugl1:"Detailed inspection using specialized tools to locate all bed bugs",
+    Bed_Bugl2:"Treatment of infested furniture, bedding, and cracks and crevices",
+    Bed_Bugl3:"Heat treatments when appropriate",
+    Bed_Bugl4:"Follow-up inspections to ensure complete elimination",
+    Bed_Bugl5:"Prevention recommendations to avoid re-infestation",
+    // Rat & Rodent
+    Rat_Rodenth:"Rat & Rodent Control",
+    Rat_Rodentp:"Rodents damage property, contaminate food, and can spread diseases. Our rodent control program effectively eliminates rats, mice, and other rodents from your property.",
+    Rat_Rodentl1:"Comprehensive inspection to identify entry points and nesting areas",
+    Rat_Rodentl2:"Placement of traps and bait stations in strategic locations",
+    Rat_Rodentl3:"Sealing of entry points to prevent future access",
+    Rat_Rodentl4:"Removal of rodents and nesting materials",
+    Rat_Rodentl5:"Advice on preventing future rodent problems",
+    // General Pest Control: Do's and Don'ts
+    gen_dosh:"General Pest Control: Do's and Don'ts",
+    gen_dosh3:"Do's",
+    gen_dosl1:"Keep your home clean and free of food debris",
+    gen_dosl2:"Store food in sealed containers",
+    gen_dosl3:"Regularly empty trash and keep bins clean",
+    gen_dosl4:"Fix leaky pipes and eliminate standing water",
+    gen_dosl5:"Seal cracks and gaps in walls, floors, and foundations",
+    gen_dosl6:"Keep vegetation trimmed away from your home",
+    gen_dosl7:"Regularly inspect your home for signs of pest activity",
+    gen_dosl8:"Schedule regular professional pest control treatments",
+    gen_dosl9:"Vacuum regularly, especially in hard-to-reach areas",
+    gen_dosl10:"Follow all post-treatment instructions from your pest control provider",
+    // donts
+    gen_dontsh3:"Don'ts",
+    gen_dontl1:"Don't leave dirty dishes in the sink overnight",
+    gen_dontl2:"Don't allow clutter to accumulate, as it provides hiding places for pests",
+    gen_dontl3:"Don't leave pet food out overnight",
+    gen_dontl4:"Don't ignore small pest problems, as they can quickly grow",
+    gen_dontl5:"Don't use DIY pest control products without proper knowledge",
+    gen_dontl6:"Don't mix different pest control products",
+    gen_dontl7:"Don't enter treated areas before it's safe to do so",
+    gen_dontl8:"Don't wash treated surfaces immediately after application",
+    gen_dontl9:"Don't allow children or pets near pest control products",
+    gen_dontl10:"Don't forget to address the underlying causes of pest problems",
+    // CTA
+    ctah:"Ready to Get Rid of Pests?",
+    ctap:"Contact us today for a free inspection and customized treatment plan tailored to your specific pest control needs.",
+    Quote:"Get a Free Quote"
     },
   
     hi:{
@@ -91,44 +167,31 @@ translations = {
   
   
   
-  function changeLanguage(lang) {
-    document.querySelectorAll("[data-i18n]").forEach(el => {
+    function changeLanguage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
-  
-        
         if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
+          el.textContent = translations[lang][key];
         } else {
-            console.warn(`Missing translation for '${key}' in '${lang}'`);
+          console.warn(`Missing translation for '${key}' in '${lang}'`);
         }
-  
-       
-        if (el.hasAttribute("placeholder") && translations[lang] && translations[lang][key]) {
-            el.setAttribute("placeholder", translations[lang][key]); 
-        }
-    });
-  
+      });
     
-    localStorage.setItem("lang", lang);
-  
-    
-    const languageSelector = document.getElementById("language");
-    if (languageSelector) {
+      localStorage.setItem("lang", lang);
+      const languageSelector = document.getElementById("language");
+      if (languageSelector) {
         languageSelector.value = lang;
+      }
     }
-  }
-  
-  document.addEventListener("DOMContentLoaded", () => {
-   
-    const savedLang = localStorage.getItem("lang") || "en";
-    changeLanguage(savedLang);
-  
     
-    const languageSelector = document.getElementById("language");
-    if (languageSelector) {
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("lang") || "en";
+      changeLanguage(savedLang);
+    
+      const languageSelector = document.getElementById("language");
+      if (languageSelector) {
         languageSelector.addEventListener("change", e => {
-            changeLanguage(e.target.value);
+          changeLanguage(e.target.value);
         });
-    }
-  });
-  
+      }
+    });

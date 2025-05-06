@@ -11,10 +11,7 @@
     <script src="js/contact.js" defer></script>
 </head>
 <body>
-<select id="language" onchange="changeLanguage(this.value)">
-    <option value="en">English</option>
-    <option value="hi">हिंदी</option>
-  </select>
+
 <div class="icon-container">
 
         <div class="icon-button popup-icon" id="msg-icon"><i class="fa-solid fa-message"></i></div>
@@ -38,6 +35,12 @@
                         <li class="nav-item"><a href="about.html" class="nav-link" data-i18n="about">About</a></li>
                         <li class="nav-item"><a href="services.html" class="nav-link" data-i18n="services">Services</a></li>
                         <li class="nav-item"><a href="contact.html" class="nav-link active" data-i18n="contacth">Contact</a></li>
+                        <div class="icon-icons-lang">
+                            <div class="lang-buttons">
+                                <button id="en-btn" class="lang-btn active" onclick="changeLanguage('en')">English</button>
+                                <button id="hi-btn" class="lang-btn" onclick="changeLanguage('hi')">हिंदी</button>
+                            </div>
+                        </div>
                     </ul>
                 </nav>
                 <div class="mobile-toggle">

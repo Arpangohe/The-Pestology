@@ -1,7 +1,89 @@
 
 translations = {
     en:{
-      
+        home: "Home",
+        about: "About",
+        services: "Services",
+        contacth: "Contact",
+        // Service Hero Section
+        Termite_Controlh: "Termite Control Services",
+        Termite_Controlp: "Professional and effective termite treatment solutions to protect your property from these silent destroyers.",
+        // Service Details
+        Termite_Protectionh: "Complete Termite Protection Solutions",
+        Termite_Protectionp: "Our advanced termite control services are designed to eliminate active termite colonies and provide long-term protection for your property. We use the latest technologies and environmentally responsible methods to ensure your home or business remains termite-free.",
+        // Pre-Construction Anti-Termite Treatment
+        Anti_Termiteh: "Pre-Construction Anti-Termite Treatment",
+        Anti_Termitehp: "Protect your new construction from termites right from the foundation stage. Our pre-construction treatment creates a chemical barrier that prevents termite entry.",
+        price_tag: "Starting from ₹12 per sq.ft.",
+        servicel1: "Complete soil treatment before foundation laying",
+        servicel2: "Treatment of critical areas like plinth filling and junction points",
+        servicel3: "Application of long-lasting termiticides",
+        servicel4: "5-year warranty on treatment",
+        servicel5: "Certified and experienced technicians",
+        WhatsApp: "Get Quote on WhatsApp",
+        // Post-Construction Termite Treatment
+        Post_Consth: "Post-Construction Termite Treatment",
+        Post_Consthp: "If your existing property is facing termite problems, our post-construction treatment eliminates active colonies and prevents further damage.",
+        price_tag1: "Starting from ₹15 per sq.ft.",
+        post_servicel1: "Thorough inspection to identify termite entry points and damage",
+        post_servicel2: "Drilling and injection of termiticides in affected areas",
+        post_servicel3: "Trench treatment around the perimeter of the building",
+        post_servicel4: "Treatment of wooden structures and furniture",
+        post_servicel5: "3-year service warranty with annual inspections",
+        // Termite Baiting System
+        Termiteh: "Termite Baiting System",
+        Termitehp: "Our advanced baiting system uses termites' own behavior against them, effectively eliminating entire colonies without the need for extensive chemical treatment.",
+        price: "Starting from ₹25,000 for residential installation",
+        Termite_servicel1: "Installation of monitoring stations around your property",
+        Termite_servicel2: "Use of cellulose-based monitors to detect termite activity",
+        Termite_servicel3: "Replacement of monitors with active bait once termites are detected",
+        Termite_servicel4: "Colony elimination through the social feeding habits of termites",
+        Termite_servicel5: "Regular monitoring and maintenance of bait stations",
+        // Chemical Barrier Treatment
+        Chemicalh: "Chemical Barrier Treatment",
+        Chemicalp: "Create a complete barrier around your property that prevents termites from entering while eliminating any existing termite activity.",
+        price1: "Starting from ₹18 per sq.ft.",
+        Chemical_servicel1: "Application of liquid termiticide around the perimeter",
+        Chemical_servicel2: "Creation of continuous chemical zone in the soil",
+        Chemical_servicel3: "Targeted treatment of entry points and vulnerable areas",
+        Chemical_servicel4: "Use of advanced non-repellent termiticides",
+        Chemical_servicel5: "Long-lasting protection with minimal environmental impact",
+        // Termite Inspection & Assessment
+        Termite_Inspectionh: "Termite Inspection & Assessment",
+        Termite_Inspectionp: "Our detailed inspection service identifies existing termite problems and potential risks, providing you with a comprehensive assessment and treatment recommendations.",
+        price2: "₹1,500 - ₹3,000 (Free with treatment)",
+        Termite_Inspectionl1: "Visual inspection of all accessible areas of the property",
+        Termite_Inspectionl2: "Use of moisture meters and thermal imaging where necessary",
+        Termite_Inspectionl3: "Identification of termite species and extent of infestation",
+        Termite_Inspectionl4: "Assessment of potential risk areas and entry points",
+        Termite_Inspectionl5: "Detailed report with treatment recommendations and cost estimate",
+        // Do's and Don'ts Section
+        dos_donts_container: "Termite Control: Do's and Don'ts",
+        Dosl1: "Schedule regular professional termite inspections (at least annually)",
+        Dosl2: "Keep wood and cellulose materials away from foundation",
+        Dosl3: "Fix leaky pipes and drainage issues promptly",
+        Dosl4: "Maintain proper ventilation in crawl spaces and attics",
+        Dosl5: "Seal cracks and gaps in your foundation",
+        Dosl6: "Keep gutters clean and ensure proper drainage away from foundation",
+        Dosl7: "Store firewood at least 20 feet away from your home",
+        Dosl8: "Remove dead tree stumps and roots near your property",
+        Dosl9: "Maintain at least 6 inches between soil and wooden parts of your home",
+        Dosl10: "Consider pre-treatment during construction or renovation",
+        // Don'ts
+        Dontsl1: "Don't ignore signs of termite activity (mud tubes, hollow wood, discarded wings)",
+        Dontsl2: "Don't use untreated wood for construction near soil",
+        Dontsl3: "Don't allow water to accumulate near your foundation",
+        Dontsl4: "Don't stack firewood against your house",
+        Dontsl5: "Don't use DIY termite treatments without proper knowledge",
+        Dontsl6: "Don't disturb active termite colonies (can cause them to spread)",
+        Dontsl7: "Don't ignore wooden structures during inspections",
+        Dontsl8: "Don't create wood-to-soil contact around your property",
+        Dontsl9: "Don't plant shrubs too close to foundation walls",
+        Dontsl10: "Don't wait for visible damage before taking action",
+        // CTA Section
+        cta1h: "Protect Your Property from Termites Today!",
+        cta1p: "Contact our termite control experts for a thorough inspection and customized treatment plan to safeguard your property from these destructive pests.",
+        WhatsApp2: "Get Free Inspection on WhatsApp"
     },
   
     hi:{
@@ -96,44 +178,31 @@ translations = {
   
   
   
-  function changeLanguage(lang) {
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-  
-        
-        if (translations[lang] && translations[lang][key]) {
+    function changeLanguage(lang) {
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+          const key = el.getAttribute("data-i18n");
+          if (translations[lang] && translations[lang][key]) {
             el.textContent = translations[lang][key];
-        } else {
+          } else {
             console.warn(`Missing translation for '${key}' in '${lang}'`);
-        }
-  
-       
-        if (el.hasAttribute("placeholder") && translations[lang] && translations[lang][key]) {
-            el.setAttribute("placeholder", translations[lang][key]); 
-        }
-    });
-  
-    
-    localStorage.setItem("lang", lang);
-  
-    
-    const languageSelector = document.getElementById("language");
-    if (languageSelector) {
-        languageSelector.value = lang;
-    }
-  }
-  
-  document.addEventListener("DOMContentLoaded", () => {
-   
-    const savedLang = localStorage.getItem("lang") || "en";
-    changeLanguage(savedLang);
-  
-    
-    const languageSelector = document.getElementById("language");
-    if (languageSelector) {
-        languageSelector.addEventListener("change", e => {
-            changeLanguage(e.target.value);
+          }
         });
-    }
-  });
-  
+      
+        localStorage.setItem("lang", lang);
+        const languageSelector = document.getElementById("language");
+        if (languageSelector) {
+          languageSelector.value = lang;
+        }
+      }
+      
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("lang") || "en";
+        changeLanguage(savedLang);
+      
+        const languageSelector = document.getElementById("language");
+        if (languageSelector) {
+          languageSelector.addEventListener("change", e => {
+            changeLanguage(e.target.value);
+          });
+        }
+      });

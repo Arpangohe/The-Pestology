@@ -5,7 +5,7 @@ const translations = {
       services: "Services",
       contact: "Contact",
       get_quote: "Get a Quote",
-      about_title: "Complete Information about Pestology",
+      about_title: "About The Pestology",
       our_story: "Our Story",
       our_story_sub: "Our success story in facility solutions",
       mission_title: "Our Mission",

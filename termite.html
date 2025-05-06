@@ -580,13 +580,35 @@
                 padding: 20px;
             }
         }
+        .lang-buttons {
+  display: flex;
+  gap: 5px;
+  margin-left: 50px;
+}
+
+.lang-btn {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.lang-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.lang-btn.active {
+  background-color: #4a80f0;
+  color: white;
+  border-color: #4a80f0;
+}
     </style>
 </head>
 <body>
-<select id="language" onchange="changeLanguage(this.value)">
-        <option value="en">English</option>
-        <option value="hi">हिंदी</option>
-      </select>
+
 <div class="icon-container">
 
         <div class="icon-button popup-icon" id="msg-icon"><i class="fa-solid fa-message"></i></div>
@@ -610,6 +632,12 @@
                         <li class="nav-item" ><a href="about.html" class="nav-link" data-i18n="about">About</a></li>
                         <li class="nav-item"><a href="services.html" class="nav-link" data-i18n="services">Services</a></li>
                         <li class="nav-item" ><a href="contact.html" class="nav-link" data-i18n="contacth">Contact</a></li>
+                        <div class="icon-icons-lang">
+                            <div class="lang-buttons">
+                                <button id="en-btn" class="lang-btn active" onclick="changeLanguage('en')">English</button>
+                                <button id="hi-btn" class="lang-btn" onclick="changeLanguage('hi')">हिंदी</button>
+                            </div>
+                        </div>
                     </ul>
                 </nav>
                 <div class="mobile-toggle">
@@ -668,7 +696,7 @@
                     <div class="service-content">
                         <h3 data-i18n="Post_Consth">Post-Construction Termite Treatment</h3>
                         <p data-i18n="Post_Consthp">If your existing property is facing termite problems, our post-construction treatment eliminates active colonies and prevents further damage.</p>
-                        <div class="price-tag" data-i18n="price_tag">Starting from ₹15 per sq.ft.</div>
+                        <div class="price-tag" data-i18n="price_tag1">Starting from ₹15 per sq.ft.</div>
                         <ul class="service-features">
                             <li data-i18n="post_servicel1">Thorough inspection to identify termite entry points and damage</li>
                             <li data-i18n="post_servicel2">Drilling and injection of termiticides in affected areas</li>
@@ -745,7 +773,7 @@
             <div class="dos-donts">
                 <h2 data-i18n="dos_donts_container">Termite Control: Do's and Don'ts</h2>
                 <div class="dos-donts-container">
-                    <div class="dos">
+                    <div class="dos" data-i18n="">
                         <h3><i class="fas fa-check-circle"></i> Do's</h3>
                         <ul>
                             <li data-i18n="Dosl1">Schedule regular professional termite inspections (at least annually)</li>
