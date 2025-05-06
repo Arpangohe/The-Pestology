@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termite Control - The Pestology</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/termite.js" defer></script>
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: #4CAF50;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #4CAF50;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 2px 0;
+            transition: all 0.3s;
+        }
+
+        /* Service Hero */
+        .service-hero {
+            background-color: #f5f5f5;
+            padding: 80px 0;
+            text-align: center;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        
+        .service-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .service-hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Service Details */
+        .service-details {
+            padding: 80px 0;
+        }
+        
+        .service-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .service-intro h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .service-intro p {
+            font-size: 16px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Service Types */
+        .service-types {
+            margin-bottom: 60px;
+        }
+        
+        .service-type {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 50px;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-type:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .service-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .service-content {
+            flex: 1;
+            padding: 40px;
+            min-width: 300px;
+        }
+        
+        .service-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .service-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .service-features li:before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Price tag */
+        .price-tag {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            width: fit-content;
+        }
+
+        .whatsapp-btn i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        /* Do's and Don'ts */
+        .dos-donts {
+            margin-bottom: 60px;
+        }
+        
+        .dos-donts h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .dos-donts-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .dos, .donts {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .dos {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4CAF50;
+        }
+        
+        .donts {
+            background-color: #ffebee;
+            border-left: 5px solid #f44336;
+        }
+        
+        .dos h3, .donts h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .dos h3 i {
+            color: #4CAF50;
+            margin-right: 10px;
+        }
+        
+        .donts h3 i {
+            color: #f44336;
+            margin-right: 10px;
+        }
+        
+        .dos ul, .donts ul {
+            list-style: none;
+        }
+        
+        .dos li, .donts li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .dos li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+        
+        .donts li:before {
+            content: "\f00d";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #f44336;
+            position: absolute;
+            left: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 60px 0;
+            border-radius: 8px;
+        }
+        
+        .cta-section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 16px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-info {
+            flex: 2;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo span {
+            color: #4CAF50;
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #4CAF50;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #4CAF50;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #4CAF50;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #4CAF50;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+.icon-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.icon-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #02492f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.popup-icon {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.popup-icon.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+        /* Media Queries for Responsive Design */
+        @media (max-width: 992px) {
+            .service-type {
+                flex-direction: column !important;
+            }
+            
+            .service-image {
+                width: 100%;
+                height: 300px;
+            }
+            
+            .dos-donts-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                display: none;
+            }
+            
+            .nav.active {
+                display: block;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+            }
+            
+            .nav-item {
+                margin: 0;
+                margin-bottom: 15px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .service-content {
+                padding: 30px;
+            }
+            
+            .service-hero h1 {
+                font-size: 32px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .service-hero {
+                padding: 60px 0;
+            }
+            
+            .service-hero h1 {
+                font-size: 28px;
+            }
+            
+            .service-intro h2 {
+                font-size: 26px;
+            }
+            
+            .dos, .donts {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<select id="language" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="hi">हिंदी</option>
+      </select>
+<div class="icon-container">
+
+        <div class="icon-button popup-icon" id="msg-icon"><i class="fa-solid fa-message"></i></div>
+        <div class="icon-button popup-icon" id="phone-icon"><i class="fa-solid fa-phone"></i></div>
+        
+        
+        <div class="icon-button" id="main-icon"><i class="fa-solid fa-comment-dots"></i></div>
+      </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>The<span>Pestology</span></h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item" ><a href="index.html" class="nav-link" data-i18n="home">Home</a></li>
+                        <li class="nav-item" ><a href="about.html" class="nav-link" data-i18n="about">About</a></li>
+                        <li class="nav-item"><a href="services.html" class="nav-link" data-i18n="services">Services</a></li>
+                        <li class="nav-item" ><a href="contact.html" class="nav-link" data-i18n="contacth">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <h1 data-i18n="Termite_Controlh">Termite Control Services</h1>
+            <p data-i18n="Termite_Controlp">Professional and effective termite treatment solutions to protect your property from these silent destroyers.</p>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-details">
+        <div class="container">
+            <div class="service-intro">
+                <h2 data-i18n="Termite_Protectionh">Complete Termite Protection Solutions</h2>
+                <p data-i18n="Termite_Protectionp">Our advanced termite control services are designed to eliminate active termite colonies and provide long-term protection for your property. We use the latest technologies and environmentally responsible methods to ensure your home or business remains termite-free.</p>
+            </div>
+
+            <!-- Service Types -->
+            <div class="service-types">
+                <!-- Pre-Construction Anti-Termite Treatment -->
+                <div class="service-type">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Pre-Construction Anti-Termite Treatment">
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="Anti_Termiteh"
+                        >Pre-Construction Anti-Termite Treatment</h3>
+                        <p data-i18n="Anti_Termitehp">Protect your new construction from termites right from the foundation stage. Our pre-construction treatment creates a chemical barrier that prevents termite entry.</p>
+                        <div class="price-tag" data-i18n="price_tag">Starting from ₹12 per sq.ft.</div>
+                        <ul class="service-features">
+                            <li data-i18n="servicel1">Complete soil treatment before foundation laying</li>
+                            <li data-i18n="servicel2">Treatment of critical areas like plinth filling and junction points</li>
+                            <li data-i18n="servicel3">Application of long-lasting termiticides</li>
+                            <li data-i18n="servicel4">5-year warranty on treatment</li>
+                            <li data-i18n="servicel5">Certified and experienced technicians</li>
+                        </ul>
+                        <a href="https://wa.me/918827222101?text=I'm%20interested%20in%20pre-construction%20termite%20treatment" class="whatsapp-btn" data-i18n="WhatsApp"><i class="fab fa-whatsapp" ></i > Get Quote on WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Post-Construction Termite Treatment -->
+                <div class="service-type">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Post-Construction Termite Treatment">
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="Post_Consth">Post-Construction Termite Treatment</h3>
+                        <p data-i18n="Post_Consthp">If your existing property is facing termite problems, our post-construction treatment eliminates active colonies and prevents further damage.</p>
+                        <div class="price-tag" data-i18n="price_tag">Starting from ₹15 per sq.ft.</div>
+                        <ul class="service-features">
+                            <li data-i18n="post_servicel1">Thorough inspection to identify termite entry points and damage</li>
+                            <li data-i18n="post_servicel2">Drilling and injection of termiticides in affected areas</li>
+                            <li data-i18n="post_servicel3">Trench treatment around the perimeter of the building</li>
+                            <li data-i18n="post_servicel4">Treatment of wooden structures and furniture</li>
+                            <li data-i18n="post_servicel5">3-year service warranty with annual inspections</li>
+                        </ul>
+                        <a href="https://wa.me/918827222101?text=I'm%20interested%20in%20post-construction%20termite%20treatment" class="whatsapp-btn" data-i18n="WhatsApp"><i class="fab fa-whatsapp" data-i18n=""></i> Get Quote on WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Termite Baiting System -->
+                <div class="service-type">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Termite Baiting System">
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="Termiteh">Termite Baiting System</h3>
+                        <p data-i18n="Termitehp">Our advanced baiting system uses termites' own behavior against them, effectively eliminating entire colonies without the need for extensive chemical treatment.</p>
+                        <div class="price-tag" data-i18n="price">Starting from ₹25,000 for residential installation</div>
+                        <ul class="service-features">
+                            <li data-i18n="Termite_servicel1">Installation of monitoring stations around your property</li>
+                            <li data-i18n="Termite_servicel2">Use of cellulose-based monitors to detect termite activity</li>
+                            <li data-i18n="Termite_servicel3">Replacement of monitors with active bait once termites are detected</li>
+                            <li data-i18n="Termite_servicel4">Colony elimination through the social feeding habits of termites</li>
+                            <li data-i18n="Termite_servicel5">Regular monitoring and maintenance of bait stations</li>
+                        </ul>
+                        <a href="https://wa.me/918827222101?text=I'm%20interested%20in%20termite%20baiting%20system" class="whatsapp-btn" data-i18n="WhatsApp"><i class="fab fa-whatsapp" ></i data-i18n=""> Get Quote on WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Chemical Barrier Treatment -->
+                <div class="service-type">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Chemical Barrier Treatment">
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="Chemicalh">Chemical Barrier Treatment</h3>
+                        <p data-i18n="Chemicalp">Create a complete barrier around your property that prevents termites from entering while eliminating any existing termite activity.</p>
+                        <div class="price-tag" data-i18n="price1">Starting from ₹18 per sq.ft.</div>
+                        <ul class="service-features">
+                            <li data-i18n="Chemical_servicel1">Application of liquid termiticide around the perimeter</li>
+                            <li data-i18n="Chemical_servicel2">Creation of continuous chemical zone in the soil</li>
+                            <li data-i18n="Chemical_servicel3">Targeted treatment of entry points and vulnerable areas</li>
+                            <li data-i18n="Chemical_servicel4">Use of advanced non-repellent termiticides</li>
+                            <li data-i18n="Chemical_servicel5">Long-lasting protection with minimal environmental impact</li>
+                        </ul>
+                        <a href="https://wa.me/918827222101?text=I'm%20interested%20in%20chemical%20barrier%20termite%20treatment" class="whatsapp-btn"><i class="fab fa-whatsapp"></i data-i18n=""> Get Quote on WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Termite Inspection & Assessment -->
+                <div class="service-type">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Termite Inspection & Assessment">
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="Termite_Inspectionh">Termite Inspection & Assessment</h3>
+                        <p data-i18n="Termite_Inspectionp">Our detailed inspection service identifies existing termite problems and potential risks, providing you with a comprehensive assessment and treatment recommendations.</p>
+                        <div class="price-tag" data-i18n="price2">₹1,500 - ₹3,000 (Free with treatment)</div>
+                        <ul class="service-features">
+                            <li data-i18n="Termite_Inspectionl1">Visual inspection of all accessible areas of the property</li>
+                            <li data-i18n="Termite_Inspectionl2">Use of moisture meters and thermal imaging where necessary</li>
+                            <li data-i18n="Termite_Inspectionl3">Identification of termite species and extent of infestation</li>
+                            <li data-i18n="Termite_Inspectionl4">Assessment of potential risk areas and entry points</li>
+                            <li data-i18n="Termite_Inspectionl5">Detailed report with treatment recommendations and cost estimate</li>
+                        </ul>
+                        <a href="https://wa.me/918827222101?text=I'm%20interested%20in%20termite%20inspection%20services" class="whatsapp-btn" data-i18n="WhatsApp"><i class="fab fa-whatsapp"></i> Get Quote on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Do's and Don'ts Section -->
+            <div class="dos-donts">
+                <h2 data-i18n="dos_donts_container">Termite Control: Do's and Don'ts</h2>
+                <div class="dos-donts-container">
+                    <div class="dos">
+                        <h3><i class="fas fa-check-circle"></i> Do's</h3>
+                        <ul>
+                            <li data-i18n="Dosl1">Schedule regular professional termite inspections (at least annually)</li>
+                            <li data-i18n="Dosl2">Keep wood and cellulose materials away from foundation</li>
+                            <li data-i18n="Dosl3">Fix leaky pipes and drainage issues promptly</li>
+                            <li data-i18n="Dosl4">Maintain proper ventilation in crawl spaces and attics</li>
+                            <li data-i18n="Dosl5">Seal cracks and gaps in your foundation</li>
+                            <li data-i18n="Dosl6">Keep gutters clean and ensure proper drainage away from foundation</li>
+                            <li data-i18n="Dosl7">Store firewood at least 20 feet away from your home</li>
+                            <li data-i18n="Dosl8">Remove dead tree stumps and roots near your property</li>
+                            <li data-i18n="Dosl9">Maintain at least 6 inches between soil and wooden parts of your home</li>
+                            <li data-i18n="Dosl10">Consider pre-treatment during construction or renovation</li>
+                        </ul>
+                    </div>
+                    <div class="donts">
+                        <h3><i class="fas fa-times-circle"></i data-i18n=""> Don'ts</h3>
+                        <ul>
+                            <li data-i18n="Dontsl1">Don't ignore signs of termite activity (mud tubes, hollow wood, discarded wings)</li>
+                            <li data-i18n="Dontsl2">Don't use untreated wood for construction near soil</li>
+                            <li data-i18n="Dontsl3">Don't allow water to accumulate near your foundation</li>
+                            <li data-i18n="Dontsl4">Don't stack firewood against your house</li>
+                            <li data-i18n="Dontsl5">Don't use DIY termite treatments without proper knowledge</li>
+                            <li data-i18n="Dontsl6">Don't disturb active termite colonies (can cause them to spread)</li>
+                            <li data-i18n="Dontsl7">Don't ignore wooden structures during inspections</li>
+                            <li data-i18n="Dontsl8">Don't create wood-to-soil contact around your property</li>
+                            <li data-i18n="Dontsl9">Don't plant shrubs too close to foundation walls</li>
+                            <li data-i18n="Dontsl10">Don't wait for visible damage before taking action</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h3 data-i18n="cta1h">Protect Your Property from Termites Today!</h3>
+                <p data-i18n="cta1p">Contact our termite control experts for a thorough inspection and customized treatment plan to safeguard your property from these destructive pests.</p>
+                <a href="https://wa.me/918827222101?text=I'm%20interested%20in%20termite%20control%20services" class="btn" data-i18n="WhatsApp2"><i class="fab fa-whatsapp"></i > Get Free Inspection on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <h2>The<span>Pestology</span></h2>
+                    </div>
+                    <p >Professional facility solutions for residential and commercial properties.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Neelbad, Bhopal, Madhya Pradesh - 462044</p>
+                        <p><i class="fas fa-phone"></i> (+91) 88272 22101</p>
+                        <p><i class="fas fa-envelope"></i> thepestology@gmail.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Pestology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav').classList.toggle('active');
+        });
+
+        document.getElementById('main-icon').addEventListener('click', function() {
+    document.getElementById('msg-icon').classList.toggle('show');
+    document.getElementById('phone-icon').classList.toggle('show');
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pest Control Services Popup</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .popup-overlay.active {
+      display: flex;
+    }
+
+    .popup {
+      background: #fff;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 700px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: popupShow 0.3s ease-out;
+      position: relative;
+    }
+
+    @keyframes popupShow {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .popup-header {
+      background-color: #009688;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .popup-header h2 {
+      margin: 0;
+    }
+
+    .service-columns {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+
+    @media (min-width: 600px) {
+      .service-columns {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .service-columns::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: #e0e0e0;
+      }
+    }
+
+    .service-column {
+      flex: 1;
+      padding: 0 1rem;
+    }
+
+    .service-column h3 {
+      color: #009688;
+      margin-bottom: 0.8rem;
+    }
+
+    .service-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .service-buttons button,
+    .column-btn,
+    .contact-btn,
+    .close-btn {
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.2s;
+    }
+
+    .service-buttons button {
+      background-color: #e0f2f1;
+      color: #00695c;
+      border: 1px solid #b2dfdb;
+      text-align: left;
+    }
+
+    .service-buttons button:hover {
+      background-color: #b2dfdb;
+    }
+
+    .column-btn {
+      background-color: #009688;
+      color: white;
+      margin-top: 1rem;
+    }
+
+    .column-btn:hover {
+      background-color: #00796b;
+    }
+
+    .popup-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      background-color: #f1f1f1;
+      border-top: 1px solid #ccc;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .contact-btn {
+      background-color: #ff9800;
+      color: white;
+    }
+
+    .close-btn {
+      background-color: #ccc;
+    }
+
+    .contact-btn:hover {
+      background-color: #fb8c00;
+    }
+
+    .close-btn:hover {
+      background-color: #bbb;
+    }
+
+    .absolute-close {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      background: #f44336;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #fff;
+      cursor: pointer;
+      z-index: 1001;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pest Control Services</h1>
+  </header>
+
+  <main>
+    <p>Welcome to our pest control website. We offer comprehensive solutions for all your pest management needs.</p>
+  </main>
+
+  <!-- POPUP -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup" id="popupBox" role="dialog" aria-labelledby="popupTitle">
+      <button class="absolute-close" onclick="closePopup()" aria-label="Close popup">×</button>
+      <div class="popup-header">
+        <h2 id="popupTitle">Our Services</h2>
+      </div>
+
+      <div class="service-columns">
+        <!-- Column 1 -->
+        <div class="service-column">
+          <h3>General Pest Control</h3>
+          <div class="service-buttons">
+            <button onclick="navigateToService('cockroach')">Cockroach Control</button>
+            <button onclick="navigateToService('bedbugs')">Bed Bug Elimination</button>
+          </div>
+          <button class="column-btn" onclick="navigateToService('general')">View Pest Control</button>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="service-column">
+          <h3>Termite Control</h3>
+          <div class="service-buttons">
+            <button onclick="navigateToService('pre-construction')">Pre-Construction</button>
+            <button onclick="navigateToService('inspection')">Termite Inspection</button>
+          </div>
+          <button class="column-btn" onclick="navigateToService('termite')">View Termite Services</button>
+        </div>
+      </div>
+
+      <div class="popup-footer">
+        <button class="contact-btn" onclick="navigateToContact()">Contact Us</button>
+        <button class="close-btn" onclick="closePopup()">Close Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const popupOverlay = document.getElementById("popupOverlay");
+    const popupBox = document.getElementById("popupBox");
+
+    function showPopup() {
+      popupOverlay.classList.add("active");
+    }
+
+    function closePopup() {
+      popupOverlay.classList.remove("active");
+    }
+
+    function navigateToService(service) {
+      console.log("Navigating to service:", service);
+      closePopup();
+    }
+
+    function navigateToContact() {
+      console.log("Navigating to contact page");
+      closePopup();
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        showPopup();
+        setTimeout(() => {
+          closePopup();
+        }, 10000); // Auto close after 10 sec
+      }, 1000); // Show after 1 sec
+    });
+
+    popupOverlay.addEventListener("click", (e) => {
+      if (e.target === popupOverlay) {
+        closePopup();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closePopup();
+      }
+    });
+  </script>
+</body>
+</html>

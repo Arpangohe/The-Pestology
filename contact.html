@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - The Pestology</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <script src="js/main.js" defer></script>
+    <script src="js/form-validation.js" defer></script> -->
+    <script src="js/contact.js" defer></script>
+</head>
+<body>
+<select id="language" onchange="changeLanguage(this.value)">
+    <option value="en">English</option>
+    <option value="hi">हिंदी</option>
+  </select>
+<div class="icon-container">
+
+        <div class="icon-button popup-icon" id="msg-icon"><i class="fa-solid fa-message"></i></div>
+        <div class="icon-button popup-icon" id="phone-icon"><i class="fa-solid fa-phone"></i></div>
+        
+        
+        <div class="icon-button" id="main-icon"><i class="fa-solid fa-comment-dots"></i></div>
+      </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>The<span>Pestology</span></h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="home">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link" data-i18n="about">About</a></li>
+                        <li class="nav-item"><a href="services.html" class="nav-link" data-i18n="services">Services</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link active" data-i18n="contacth">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="page-hero contact-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 data-i18n="contacth">Contact Us</h1>
+                <p data-i18n="touch">Get in touch with our team for facility solutions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Our Location</h3>
+                    <p>Neelbad, Bhopal<br>Madhya Pradesh - 462044</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone Number</h3>
+                    <p>(+91) 88272 22101</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Address</h3>
+                    <p>thepestology@gmail.com</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>Business Details</h3>
+                    <p>GSTIN: 23AAVFT1042Q1ZN<br>ISO: 9001:2015</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-container">
+                <div class="form-header">
+                    <h2 data-i18n="Send">Send Us a Message</h2>
+                    <p data-i18n="Sendp">Fill out the form below and we'll get back to you as soon as possible.</p>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" data-i18n="namel">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required data-i18n="namep" >
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="Email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required data-i18n="Emailp">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone" data-i18n="Phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required data-i18n="Phonep">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-i18n="Subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required data-i18n="Subjectp">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service" data-i18n="Service">Service Needed</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Select a service</option>
+                            <option value="pest-control" data-i18n="pch">Pest Control</option>
+                            <option value="sanitization" data-i18n="snh">Sanitization</option>
+                            <option value="traders" data-i18n="trh">Traders</option>
+                            <option value="water-proofing" data-i18n="wph">Water Proofing</option>
+                            <option value="warehouse" data-i18n="wwh">Warehouse</option>
+                            <option value="other" data-i18n="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="yrmsg">Your Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Please provide details about your facility solution needs" required data-i18n="yrmsgd"></textarea>
+                    </div>
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent" data-i18n="consent">I consent to having this website store my submitted information so they can respond to my inquiry.</label>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary" data-i18n="smsg">Send Message</button>
+                    </div>
+                    <div id="form-message" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Location</h2>
+                <p>Visit our office or schedule an appointment</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14673.539673151434!2d77.36889!3d23.1733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c6b2f9a0f7335%3A0x1f9c8c1c4e4acb3!2sNeelbad%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710349063242!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="fq">Frequently Asked Questions</h2>
+                <p data-i18n="fqs">Find answers to common questions about our services</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-i18n="fq1">What areas do you serve?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="fqs1">We primarily serve Bhopal and surrounding areas in Madhya Pradesh. For specific service area inquiries, please contact us directly.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-i18n="fq2">Are your treatments safe for children and pets?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="fqs2">Yes, we use products that are designed to be safe for families and pets when used as directed. We'll provide specific instructions on any precautions to take during and after treatment.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-i18n="fq3">Do you offer free inspections?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="fqs3">Yes, we offer free inspections for general facility solution assessments. This helps us provide accurate quotes tailored to your specific needs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-i18n="fq4">How soon can you schedule a service appointment?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="fqs4">We typically can schedule appointments within 24-48 hours for standard services. For emergency situations, we offer expedited service when possible.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-i18n="fq5">Do you offer service guarantees?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-i18n="fqs5">Yes, we stand behind our work with service guarantees. The specific terms vary by service type, and we'll be happy to discuss these details during your consultation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-i18n="need">Need immediate assistance?</h2>
+                <p data-i18n="nnedp">Call us now at (+91) 88272 22101 for prompt service.</p>
+                <a href="tel:+918827222101" class="btn btn-light" data-i18n="call">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <h2>The<span>Pestology</span></h2>
+                    </div>
+                    <p>Professional facility solutions for residential and commercial properties.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Neelbad, Bhopal, Madhya Pradesh - 462044</p>
+                        <p><i class="fas fa-phone"></i> (+91) 88272 22101</p>
+                        <p><i class="fas fa-envelope"></i> thepestology@gmail.com</p>
+                        <p><i class="fas fa-id-card"></i> GSTIN: 23AAVFT1042Q1ZN</p>
+                        <p><i class="fas fa-certificate"></i> ISO Certification: ISO 9001:2015</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-form">
+                    <h3>Contact Us</h3>
+                    <form id="footer-contact-form">
+                        <div class="form-group">
+                            <input type="text" id="footer-name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="footer-email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="footer-subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="footer-message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 The Pestology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

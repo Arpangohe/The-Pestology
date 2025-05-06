@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - The Pestology</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <script src="js/main.js" defer></script> -->
+    <script src="js/service.js" defer></script>
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: #4CAF50;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #4CAF50;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 2px 0;
+            transition: all 0.3s;
+        }
+
+        /* Services Section */
+        .page-hero {
+            background-color: #f5f5f5;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .page-hero p {
+            font-size: 18px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .services-container {
+            padding: 60px 0;
+        }
+        
+        .services-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .services-heading h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .services-heading p {
+            font-size: 16px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .service-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .service-category {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-category-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .service-category-content {
+            padding: 25px;
+        }
+        
+        .service-category-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .service-category-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .service-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .service-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .service-list li:before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #45a049;
+        }
+        
+        .cta-section {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 50px 0;
+            margin-top: 50px;
+        }
+        
+        .cta-section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 16px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-info {
+            flex: 2;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo span {
+            color: #4CAF50;
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #4CAF50;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #4CAF50;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #4CAF50;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #4CAF50;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 992px) {
+            .service-category {
+                flex: 0 0 calc(50% - 15px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                display: none;
+            }
+            
+            .nav.active {
+                display: block;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+            }
+            
+            .nav-item {
+                margin: 0;
+                margin-bottom: 15px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .service-category {
+                flex: 0 0 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 28px;
+            }
+            
+            .services-heading h2 {
+                font-size: 26px;
+            }
+            
+            .service-category-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<select id="language" onchange="changeLanguage(this.value)">
+    <option value="en">English</option>
+    <option value="hi">हिंदी</option>
+  </select>
+    <!-- Header -->
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>The<span>Pestology</span></h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="home">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link" data-i18n="about">About</a></li>
+                        <li class="nav-item"><a href="services.html" class="nav-link" data-i18n="services">Services</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link" data-i18n="contact" >Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 data-i18n="our_services">Our Services</h1>
+            <p data-i18n="our_servicespro">Professional pest control solutions for residential and commercial properties</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-container">
+        <div class="container">
+            <div class="services-heading">
+                <h2 data-i18n="our_servicesp">Comprehensive Pest Management Solutions</h2>
+                <p data-i18n="our_servicespp">We offer a wide range of pest control services tailored to meet your specific needs. Our team of experts uses safe, effective, and environmentally friendly methods to eliminate and prevent pest infestations.</p>
+            </div>
+
+            <div class="service-categories">
+                <!-- General Pest Control Category -->
+                <div class="service-category">
+                    <div class="service-category-image">
+                        <img src="/api/placeholder/600/400" alt="General Pest Control">
+                    </div>
+                    <div class="service-category-content">
+                        <h3 data-i18n="General_Pest">General Pest Control</h3>
+                        <p data-i18n="General_Pestp">Our general pest control services are designed to eliminate and prevent infestations of common household pests.</p>
+                        <ul class="service-list">
+                            <li data-i18n="Generalpservl1">Cockroach Control</li>
+                            <li data-i18n="Generalpservl2">Mosquito Control</li>
+                            <li data-i18n="Generalpservl3">Housefly Management</li>
+                            <li data-i18n="Generalpservl4">Bed Bug Elimination</li>
+                            <li data-i18n="Generalpservl5">Rat & Rodent Control</li>
+                        </ul>
+                        <a href="general-pest.html" class="btn" data-i18n="Learn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Termite Control Category -->
+                <div class="service-category">
+                    <div class="service-category-image">
+                        <img src="/api/placeholder/600/400" alt="Termite Control">
+                    </div>
+                    <div class="service-category-content">
+                        <h3 data-i18n="Termite_Control">Termite Control</h3>
+                        <p data-i18n="Termite_Controlp">Our comprehensive termite control services help protect your property from destructive termite infestations.</p>
+                        <ul class="service-list">
+                            <li data-i18n="Termitel1">Pre-Construction Treatment</li>
+                            <li data-i18n="Termitel2">Post-Construction Treatment</li>
+                            <li data-i18n="Termitel3">Termite Inspection</li>
+                            <li data-i18n="Termitel4">Termite Baiting Systems</li>
+                            <li data-i18n="Termitel5">Preventative Measures</li>
+                        </ul>
+                        <a href="termite.html" class="btn" data-i18n="Learn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h3 data-i18n="cta_sectionh">Need Professional Pest Control Services?</h3>
+                <p data-i18n="cta_sectionp">Contact us today for a free inspection and customized treatment plan tailored to your specific pest control needs.</p>
+                <a href="contact.html" class="btn" data-i18n="Quote">Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <h2>The<span>Pestology</span></h2>
+                    </div>
+                    <p>Professional facility solutions for residential and commercial properties.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Neelbad, Bhopal, Madhya Pradesh - 462044</p>
+                        <p><i class="fas fa-phone"></i> (+91) 88272 22101</p>
+                        <p><i class="fas fa-envelope"></i> thepestology@gmail.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 The Pestology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

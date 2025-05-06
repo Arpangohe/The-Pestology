@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Pestology</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <script src="js/main.js" defer></script> -->
+    
+    <script src="js/about.js" defer></script>
+</head>
+<body>
+
+<div class="icon-container">
+
+        <div class="icon-button popup-icon" id="msg-icon"><i class="fa-solid fa-message"></i></div>
+        <div class="icon-button popup-icon" id="phone-icon"><i class="fa-solid fa-phone"></i></div>
+        
+        
+        <div class="icon-button" id="main-icon"><i class="fa-solid fa-comment-dots"></i></div>
+      </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>The<span>Pestology</span></h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="home">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link active" data-i18n="about">About</a></li>
+                        <li class="nav-item"><a href="services.html" class="nav-link" data-i18n="services">Services</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link" data-i18n="contact" >Contact</a></li>
+                        <div class="icon-icons-lang">
+                            <div class="lang-buttons">
+                                <button id="en-btn" class="lang-btn active" onclick="changeLanguage('en')">English</button>
+                                <button id="hi-btn" class="lang-btn" onclick="changeLanguage('hi')">हिंदी</button>
+                            </div>
+                        </div>
+                    </ul>
+                </nav>
+                <div class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="page-hero about-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 data-i18n="about_title">About The Pestology</h1>
+                <p data-i18n="asp">Your trusted partner in facility solutions since 2022</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="our-story">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="our_story">Our Story</h2>
+                <p data-i18n="our_story_sub">How we became leaders in facility solutions</p>
+            </div>
+            <div class="story-content">
+                <div class="story-image">
+                    <img src="https://placehold.co/600x400" alt="The Pestology team at work">
+                </div>
+                <div class="story-text">
+                    <h3 data-i18n="mission_title">Our Mission & Vision</h3>
+                    <p data-i18n="mission_p1">We are a multifaceted solution company formed to provide ease of living in 2022. From Pest Management to Hygiene Solutions, we intend to provide various hassle-free Facility solutions for day-to-day problems with our seamless services through the best quality products.</p>
+                    <p data-i18n="mission_p2">Based in Bhopal, Madhya Pradesh, The Pestology has quickly established itself as a trusted name in facility solutions. Our commitment to quality, customer satisfaction, and environmental responsibility has helped us build strong relationships with clients across various sectors.</p>
+                    <p data-i18n="mission_p3">We believe in providing comprehensive solutions that address the unique needs of each client, ensuring their spaces remain safe, clean, and well-maintained.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="wph">Why Choose The Pestology</h2>
+                <p data-i18n="wpp">We're committed to providing exceptional facility solutions</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 data-i18n= "ISO">ISO 9001:2015 Certified</h3>
+                    <p data-i18n="isop">Our services meet international quality management standards, ensuring consistent, high-quality results.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 data-i18n="team">Expert Team</h3>
+                    <p data-i18n="teamp">Our team consists of trained professionals with extensive experience in facility management and pest control.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 data-i18n="ecoh">Eco-Friendly Solutions</h3>
+                    <p data-i18n="ecop">We use environmentally responsible products and methods that are effective yet safe for people and pets.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 data-i18n="cushh">Customer-Centric Approach</h3>
+                    <p data-i18n="cushp">We prioritize customer satisfaction and tailor our services to meet the specific needs of each client.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectors We Serve -->
+    <section class="sectors-detailed">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="sectorsh">Sectors We Serve</h2>
+                <p data-i18n="sectorshp">Providing comprehensive solutions across various industries</p>
+            </div>
+            <div class="sectors-list">
+                <div class="sector-item">
+                    <div class="sector-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="sector-details">
+                        <h3 data-i18n="schcpunh">Schools & University Campus</h3>
+                        <p data-i18n="schcpunp">We provide comprehensive facility solutions for educational institutions, ensuring clean, safe, and pest-free environments for students and staff. Our services include regular pest control, sanitization, and maintenance to meet the specific needs of schools and universities.</p>
+                    </div>
+                </div>
+                <div class="sector-item">
+                    <div class="sector-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="sector-details">
+                        <h3 data-i18n="constrh">Construction Sites</h3>
+                        <p data-i18n="constrhp">Construction sites face unique challenges when it comes to pest control and waterproofing. We offer specialized solutions to protect construction materials, prevent pest infestations, and ensure proper waterproofing during the construction process.</p>
+                    </div>
+                </div>
+                <div class="sector-item">
+                    <div class="sector-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="sector-details">
+                        <h3 data-i18n="rhh">Residential Homes</h3>
+                        <p data-i18n="rhhp">We help homeowners maintain pest-free, clean, and well-maintained living spaces. Our residential services include pest control, sanitization, waterproofing, and other solutions tailored to the specific needs of each home.</p>
+                    </div>
+                </div>
+                <div class="sector-item">
+                    <div class="sector-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="sector-details">
+                        <h3 data-i18n="coh">Commercial Offices</h3>
+                        <p data-i18n="cohp">We provide comprehensive facility solutions for commercial offices, ensuring clean, professional, and pest-free work environments. Our services help businesses maintain their premises and create a positive impression on clients and employees.</p>
+                    </div>
+                </div>
+                <div class="sector-item">
+                    <div class="sector-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="sector-details">
+                        <h3 data-i18n="rh">Restaurants</h3>
+                        <p data-i18n="rhhp">Restaurants require stringent pest control and hygiene measures. We offer specialized solutions to help food establishments maintain the highest standards of cleanliness and comply with health regulations.</p>
+                    </div>
+                </div>
+                <div class="sector-item">
+                    <div class="sector-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="sector-details">
+                        <h3 data-i18n="fh">Factories</h3>
+                        <p data-i18n="fhp">We provide industrial-strength facility solutions for factories, addressing the unique challenges of manufacturing environments. Our services help maintain clean, safe, and efficient production facilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="wocsh">Client Testimonials</h2>
+                <p data-i18n="wocsp">What our customers say about our services</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p data-i18n="wocsp_1">"The Pestology has been providing pest control services for our school for the past year, and we've been extremely satisfied with their work. Their team is professional, thorough, and always ensures our campus remains pest-free."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Dr. Suresh Verma</h4>
+                        <p>Principal, Delhi Public School, Bhopal</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p data-i18n="wocsp_2">"We hired The Pestology for sanitization services during the pandemic, and they exceeded our expectations. Their attention to detail and use of quality products gave us peace of mind during a challenging time."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Anita Sharma</h4>
+                        <p>Office Manager, Tech Solutions</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p data-i18n="wocsp_3">"The waterproofing solution provided by The Pestology has completely resolved our leakage issues. Their team was prompt, professional, and delivered excellent results. We're very satisfied with their service."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Rajiv Malhotra</h4>
+                        <p>Property Manager</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p data-i18n="wocsp_4">"We've been using The Pestology's pest control services for our restaurant, and the results have been outstanding. Their team is professional, reliable, and always ensures our establishment remains pest-free."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Vikram Singh</h4>
+                        <p>Restaurant Owner</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-i18n="cta_content">Ready to experience our exceptional service?</h2>
+                <p data-i18n="cta_contentp">Contact us today for a free consultation and quote.</p>
+                <a href="contact.html" class="btn btn-light" data-i18n="Touch">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <h2>The<span>Pestology</span></h2>
+                    </div>
+                    <p>Professional facility solutions for residential and commercial properties.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Neelbad, Bhopal, Madhya Pradesh - 462044</p>
+                        <p><i class="fas fa-phone"></i> (+91) 88272 22101</p>
+                        <p><i class="fas fa-envelope"></i> thepestology@gmail.com</p>
+                        <p><i class="fas fa-id-card"></i> GSTIN: 23AAVFT1042Q1ZN</p>
+                        <p><i class="fas fa-certificate"></i> ISO Certification: ISO 9001:2015</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-form">
+                    <h3>Contact Us</h3>
+                    <form id="footer-contact-form">
+                        <div class="form-group">
+                            <input type="text" id="footer-name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="footer-email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="footer-subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="footer-message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 The Pestology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>  2023 The Pestology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
